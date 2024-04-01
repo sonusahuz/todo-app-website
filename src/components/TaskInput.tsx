@@ -22,11 +22,11 @@ const TaskInput = () => {
   };
 
   return (
-    <div>
+    <div className="md:w-[600px] mx-auto">
       <Card>
         <form
           onSubmit={handleTask}
-          className="gap-4 rounded flex items-center justify-between p-2"
+          className="gap-4 rounded flex items-center justify-between"
         >
           <input
             type="text"

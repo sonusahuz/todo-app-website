@@ -32,7 +32,7 @@ const TaskList = ({ todos }: { todos: Todo[] }) => {
   };
 
   return (
-    <div className="mx-auto w-[700px]">
+    <div className="mx-auto w-auto">
       <div>
         {todos.length > 0 ? (
           <div>
@@ -48,7 +48,7 @@ const TaskList = ({ todos }: { todos: Todo[] }) => {
                     {editingId === todo.id ? (
                       <input
                         type="text"
-                        className="px-2 py-2 border-2 bg-white rounded-lg w-96"
+                        className="px-2 py-2 border-2 bg-white rounded-lg w-auto"
                         value={editText}
                         onChange={(e) => setEditText(e.target.value)}
                       />
