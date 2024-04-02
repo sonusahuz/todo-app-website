@@ -38,7 +38,7 @@ const TaskList = ({ todos }: { todos: Todo[] }) => {
           <div>
             {todos.map((todo) => (
               <Card key={todo.id}>
-                <div className="flex items-center justify-between gap-4">
+                <div className="flex items-center justify-between gap-4 flex-wrap">
                   <div className="flex items-center gap-2">
                     <input
                       type="checkbox"
@@ -48,7 +48,7 @@ const TaskList = ({ todos }: { todos: Todo[] }) => {
                     {editingId === todo.id ? (
                       <input
                         type="text"
-                        className="px-2 py-2 border-2 bg-white rounded-lg w-auto"
+                        className="px-2 py-2 border-2 text-xl bg-white rounded-lg w-96"
                         value={editText}
                         onChange={(e) => setEditText(e.target.value)}
                       />
@@ -56,7 +56,7 @@ const TaskList = ({ todos }: { todos: Todo[] }) => {
                       <p
                         className={`${
                           todo.completed ? "line-through text-red-600" : ""
-                        } text-black text-xl truncate`}
+                        } text-black text-xl font-normal truncate w-auto`}
                       >
                         {todo.text}
                       </p>
@@ -65,14 +65,14 @@ const TaskList = ({ todos }: { todos: Todo[] }) => {
                   <div className="space-x-3">
                     {editingId === todo.id ? (
                       <Button
-                        className="px-2 py-3 rounded w-16"
+                        className="px-2 py-2 rounded w-16"
                         onClick={() => handleUpdateTask(todo.id)}
                       >
                         Save
                       </Button>
                     ) : (
                       <Button
-                        className="px-2 py-3 rounded w-16"
+                        className="px-2 py-2 rounded w-16"
                         onClick={() => handleEdit(todo.id, todo.text)}
                       >
                         Edit
@@ -80,7 +80,7 @@ const TaskList = ({ todos }: { todos: Todo[] }) => {
                     )}
                     <Button
                       onClick={() => handleDeleteTask(todo.id)}
-                      className="px-2 py-3 rounded w-16 bg-red-700"
+                      className="px-2 py-2 rounded w-16 bg-red-700"
                     >
                       Delete
                     </Button>
